@@ -21,20 +21,26 @@ class LoginController extends Controller
 
     }
 
-        public function check(Request $request)
-        {
-            $this->validate($request, [
-                'username' => 'required',
-                'password' => 'required'
-            ]);
-            if (Auth::guard('admin')->attempt([
-                'username' => $request->input('username'),
-                'password' => $request->input('password'),
-                'role' => 1
-            ])) {
-                return redirect()->route('admin');
-            }
-            Session::flash('error', 'Tài khoản hoặc mật khẩu không chính xác');
-            return redirect()->back();
+    public function check(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required'
+        ], [
+            'username.required' => 'Vui lòng nhập tên đăng nhập',
+            'password.required' => 'Vui lòng nhập mật khẩu'
+        ]);
+    
+        if (Auth::guard('admin')->attempt([
+            'username' => $request->input('username'),
+            'password' => $request->input('password'),
+            'role' => 1
+        ])) {
+            return redirect()->route('admin');
         }
+    
+        Session::flash('error', 'Tài khoản hoặc mật khẩu không chính xác');
+        return redirect()->back();
+    }
+    
 }

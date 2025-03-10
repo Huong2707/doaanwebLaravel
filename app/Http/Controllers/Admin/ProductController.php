@@ -219,7 +219,13 @@ class ProductController extends Controller
         $request->validate([
             'name' => "required|unique:products,name,{$id},id",
             'image' => "required",
+        ], [
+            'name.required' => 'Tên sản phẩm là bắt buộc.',
+            'name.unique' => 'Tên sản phẩm đã tồn tại, vui lòng chọn tên khác.',
+            
+            'image.required' => 'Ảnh sản phẩm là bắt buộc.',
         ]);
+        
 
         $product = Product::findOrFail($id);
         $product->name = (string)$request->input('name');

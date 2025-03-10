@@ -23,7 +23,7 @@
                                     </div>
                                     @include('alert')
                                     <form class="user" id="form" action="" method="post">
-
+                                        @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail"> Tên sản phẩm</label>
                                             <input type="" name="name" class="form-control form-control-user" value="{{ $product->name }}"
@@ -59,10 +59,10 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail"> Hình ảnh </label>
                                             <br>
-                                            <input id="ckfinder-input-1" name="image" type="text" style="width:60%" value="{{$product->image}}">
-
+                                        <input id="ckfinder-input-1" name="image" type="text" style="width:60%" value="{{$product->image}}">
+                                        <!--<input id="ckfinder-input-1" name="image" type="file" style="width:60%" value="/ckfinder/userfiles/images/%C3%81o%20Hoodie/%C3%81o%20Hoodie%20HX044/HXX044.jpg">!-->
                                         </div>
-                                        @csrf
+                                        
 
                                     </form>
                                     <button id="ckfinder-popup-1" class="button-a button-a-background">Chọn ảnh</button>

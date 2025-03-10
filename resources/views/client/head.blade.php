@@ -69,7 +69,7 @@
                             @if (Auth::check())
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hi:
-                                        {{ Auth::user()->name }}</a>
+                                        {{ Auth::user()->username }}</a>
                                     <div class="dropdown-menu rounded-0 m-0">
                                         <a href="{{ route('user.information') }}" class="dropdown-item">Thông tin cá nhân</a>
                                         <a href="{{ route('order') }}" class="dropdown-item">Đơn hàng</a>
@@ -104,7 +104,7 @@
                             <div class="ml-auto py-0 d-flex flex-row">
                                 @if (Auth::check())
                                     <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hi: {{ Auth::user()->name }}</a>
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hi: {{ Auth::user()->username }}</a>
                                         <div class="dropdown-menu rounded-0 m-0">
                                             <a href="{{ route('user.information') }}" class="dropdown-item">Thông tin cá nhân</a>
                                             <a href="{{ route('order') }}" class="dropdown-item">Đơn hàng</a>

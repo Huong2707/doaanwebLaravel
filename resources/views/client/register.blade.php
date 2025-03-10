@@ -15,50 +15,45 @@
                             <label>Tên tài khoản</label>
                             <input class="form-control @error('name') is-invalid @enderror" type="text"
                                    name="username" placeholder="username" value="{{ old('name') }}">
-                            @error('name')
+                            <!-- @error('username')
                             <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @enderror -->
+                            @if ($errors->has('username'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('username') }}
+                                </div>
+                            @endif
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label>Tên</label>
-                            <input class="form-control @error('name') is-invalid @enderror" type="text"
-                                name="name" placeholder="Họ và tên" value="{{ old('name') }}">
-                            @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label>Địa chỉ email</label>
-                            <input class="form-control @error('email') is-invalid @enderror" type="email"
-                                name="email" placeholder="abc@gmail.com" value="{{ old('email') }}">
-                            @error('email')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                        
                         <div class="col-md-12 form-group">
                             <label>Số điện thoại</label>
                             <input class="form-control @error('phone') is-invalid @enderror" type="text"
                                 name="phone" placeholder="09871234" value="{{ old('phone') }}">
-                            @error('phone')
+                            <!-- @error('phone')
                                 <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @enderror -->
+                            @if ($errors->has('phone'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('phone') }}
+                                </div>
+                            @endif
+                            
                         </div>
                         <div class="col-md-12 form-group">
                             <label>Mật khẩu</label>
                             <input class="form-control @error('password') is-invalid @enderror" name="password"
                                 type="password" placeholder="">
-                            @error('password')
+                            <!-- @error('password')
                                 <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @enderror -->
+                            @if ($errors->has('password'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('password') }}
+                                </div>
+                            @endif
+                            
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label>Nhập lại mật khẩu</label>
-                            <input class="form-control @error('password_confirmation') is-invalid @enderror"
-                                name="password_confirmation" type="password" placeholder="">
-                            @error('password_confirmation')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                    
                         <div class="col-md-12 form-group">
                             <button type="submit"
                                 class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Đăng ký</button>

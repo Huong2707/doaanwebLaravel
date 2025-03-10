@@ -31,7 +31,7 @@
                         <a href="{{ $product->id_product }}-{{ Str::slug($product->name, '-') }}.html">{{ $product->name }}</a>
 
 {{--                        <span>{{ $carts[$product->id] }} x {{ number_format($product->price) }}</span>--}}
-                        @php
+                        <!--@php-->
                             $totalPrice += $carts[$product->id] * $product->price;
                             @endphp
                     </div>

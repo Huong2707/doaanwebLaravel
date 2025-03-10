@@ -34,7 +34,6 @@
                         <tbody>
 
                         @foreach($data as $item)
-
                             <tr>
                                 <th><img src="{{ $item->image }}"  style="width:50%;height:50%;"></th>
                                 <th id = "th-name-product" onclick="location.href='product/detail/{{ $item->id }}'"> {{ $item->name }} </th>
